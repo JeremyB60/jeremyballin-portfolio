@@ -35,13 +35,8 @@ const Projects = () => {
           - Intégration de Stripe pour la gestion des paiements.
           <br />
           La base de données a été mise en place en utilisant MySQL.
-          <br />
-          {/* <strong>Liens :</strong><br />
-          - <a href="#">Lien vers le site (s'il existe)</a><br />
-          - <a href="#">Lien vers le dépôt GitHub (s'il est public)</a><br /> */}
         </>
       ),
-
       siteLink: "",
       githubLink: "",
     },
@@ -121,14 +116,14 @@ const Projects = () => {
             )}
           </div>
           <div className="w-full sm:w-3/4 mx-auto md:w-1/2">
-            <h2 className="lg:text-[3vw] text-[25px] mb-3 uppercase flex justify-between">
+            <h2 className="lg:text-[3vw] text-[25px] mb-0 uppercase flex justify-between">
               projets
-              <span className="lg:text-[2.5vw] text-[20px] text-customGreen ml-3">
+              <span className="lg:text-[2.5vw] text-[20px] text-customGreen">
                 {projects.length}
               </span>
             </h2>
-            <hr className="bg-customGreen h-[1px]" />{" "}
-            <ul className="list-none pl-0 space-y-5 lg:text-[1.7vw] text-[18px]">
+            <hr />
+            <ul className="list-none pl-0 lg:text-[1.7vw] text-[18px] my-3">
               {projects.map((project, index) => (
                 <div key={index}>
                   <li
@@ -191,7 +186,7 @@ const Projects = () => {
                     </div>
                   </li>
                   {index !== projects.length - 1 && (
-                    <hr className="bg-customGreen h-[1px]" />
+                    <hr />
                   )}
                 </div>
               ))}
