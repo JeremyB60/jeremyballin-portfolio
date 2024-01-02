@@ -1,0 +1,28 @@
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+
+.testecran {
+  background: url(/images/background.jpg);
+  background-size: cover;
+}
+
+.aboutImage {
+  background: url(images/avatar.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* MES REALISATIONS */
+
+.degrade-span {
+  background: linear-gradient(90deg, #00b700, #00bfff); /* Vert à Bleu */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block; /* Pour que le dégradé s'applique correctement */
+}
