@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   DiHtml5,
   DiCss3,
@@ -59,86 +59,76 @@ const Skills = () => {
     { icon: <SiPostman size={48} />, name: "Postman" },
     { icon: <SiOpenai size={48} />, name: "OpenAI" },
   ];
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const [hoveredToolIndex, setHoveredToolIndex] = useState(-1);
+  const [, setHoveredIndex] = useState(-1);
+  const [, setHoveredToolIndex] = useState(-1);
 
   return (
-    <section className="max-w-screen-2xl mx-auto px-3">
-      <Paper
-        elevation={0}
-        sx={{
-          paddingTop: { xs: 6, sm: 10 },
-          paddingBottom: { xs: 6, sm: 10 },
-        }}
-      >
-        <Typography
-          variant="h2"
-          color="primary"
-          gutterBottom
-          sx={{ paddingBottom: 1.2 }}
-        >
-          Mes compétences
-        </Typography>
-        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-          {skillsData.map((skill, index) => (
-            <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
-              <Paper
-                className="skill-card"
-                elevation={3}
-                sx={{ p: 2, textAlign: "center" }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(-1)}
-              >
-                {React.cloneElement(skill.icon, {
-                  color: hoveredIndex === index ? "#62EB4C" : "inherit",
-                })}
-                <Typography
-                  variant="subtitle1"
-                  sx={{ mt: 1 }}
-                  className="skill-name"
-                  color="secondary"
-                >
-                  {skill.name}
-                </Typography>
-              </Paper>
+    <div className="customBackground pb-20">
+        <section className="max-w-screen-2xl mx-auto px-3">
+          <div className="w-5/6 mx-auto">
+            <h2 className="mb-3 lg:text-[2.5vw] text-[25px] m-0 uppercase flex justify-between">
+              Mes compétences
+            </h2>
+            <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+              {skillsData.map((skill, index) => (
+                <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+                  <Paper
+                    className="skill-card"
+                    elevation={3}
+                    sx={{
+                      p: 2,
+                      textAlign: "center",
+                      backgroundColor: "#FFFFFF22",
+                    }}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                  >
+                    {skill.icon}
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ mt: 1 }}
+                      className="skill-name"
+                      color="secondary"
+                    >
+                      {skill.name}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-        <Typography
-          variant="h2"
-          color="primary"
-          gutterBottom
-          sx={{ paddingBottom: 1.2, marginTop: "40px" }}
-        >
-          Mes outils
-        </Typography>
-        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-          {toolsData.map((tool, index) => (
-            <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
-              <Paper
-                className="skill-card"
-                elevation={3}
-                sx={{ p: 2, textAlign: "center" }}
-                onMouseEnter={() => setHoveredToolIndex(index)}
-                onMouseLeave={() => setHoveredToolIndex(-1)}
-              >
-                {React.cloneElement(tool.icon, {
-                  color: hoveredToolIndex === index ? "customGreen" : "inherit",
-                })}
-                <Typography
-                  variant="subtitle1"
-                  sx={{ mt: 1 }}
-                  className="skill-name"
-                  color="secondary"
-                >
-                  {tool.name}
-                </Typography>
-              </Paper>
+            <h2 className="mt-10 mb-3 lg:text-[2.5vw] text-[25px] m-0 uppercase flex justify-between">
+              Mes outils
+            </h2>
+            <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+              {toolsData.map((tool, index) => (
+                <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+                  <Paper
+                    className="skill-card"
+                    elevation={3}
+                    sx={{
+                      p: 2,
+                      textAlign: "center",
+                      backgroundColor: "#FFFFFF22",
+                    }}
+                    onMouseEnter={() => setHoveredToolIndex(index)}
+                    onMouseLeave={() => setHoveredToolIndex(-1)}
+                  >
+                    {tool.icon}
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ mt: 1 }}
+                      className="skill-name"
+                      color="secondary"
+                    >
+                      {tool.name}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </Paper>
-    </section>
+          </div>
+        </section>
+    </div>
   );
 };
 

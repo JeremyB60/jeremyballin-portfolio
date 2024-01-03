@@ -26,3 +26,30 @@
   color: transparent;
   display: inline-block; /* Pour que le dégradé s'applique correctement */
 }
+
+/* MES COMPETENCES / OUTILS */
+
+.skill-card {
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.skill-card .skill-name {
+  display: none;
+  font-family: "raleway";
+}
+
+.skill-card:hover .skill-name {
+  display: block;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+}

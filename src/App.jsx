@@ -15,23 +15,6 @@ const theme = createTheme({
       main: "#C6D4E4",
     },
   },
-  // typography: {
-  //   fontFamily: "Raleway, sans-serif",
-  //   h1: {
-  //     fontSize: "1.5rem",
-  //     "@media (min-width:600px)": {
-  //       fontSize: "2rem",
-  //     },
-  //   },
-  //   h2: {
-  //     fontSize: "1.2rem",
-  //     fontWeight: "500",
-  //     "@media (min-width:600px)": {
-  //       fontSize: "1.5rem",
-  //       fontWeight: "400",
-  //     },
-  //   },
-  // },
 });
 
 const App = () => {

@@ -142,16 +142,16 @@ const Projects = () => {
   return (
     <div className="customBackground">
       <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
-        <div className="w-5/6 mx-auto flex flex-col-reverse justify-center items-center md:flex-row h-screen">
+        <div className="w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
             {hoveredProject && (
-              <div className="text-sm xl:text-lg flex flex-col md:w-[90%] p-0">
+              <div className="text-sm xl:text-lg flex flex-col">
                 {hoveredProject.description}
               </div>
             )}
           </div>
           <div className="w-full mx-auto md:w-1/2">
-            <h2 className="lg:text-[3vw] text-[25px] mb-0 uppercase flex justify-between">
+            <h2 className="lg:text-[3vw] text-[25px] m-0 uppercase flex justify-between">
               projets
               <span className="lg:text-[2.5vw] text-[20px] text-customGreen">
                 {projects.length}
@@ -175,7 +175,7 @@ const Projects = () => {
                             viewBox="0 -960 960 960"
                             width="24"
                             className="mr-2"
-                            fill="#62eb4c"
+                            fill="#00b700"
                           >
                             <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
                           </svg>
@@ -184,37 +184,38 @@ const Projects = () => {
                     <div className="flex w-full justify-between items-center">
                       <span className="my-1">{project.title}</span>
                       <div className="flex gap-5">
-                      {project.siteLink && (
-                        <a
-                          href={project.siteLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="no-underline hover:text-customGreen"
-                        >
-                          {hoveredProject &&
-                            hoveredProject.title === project.title &&
-                            hoveredProject.siteLink !== null && (
-                              <button className="cursor-pointer text-customGreen lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
-                                Site
-                              </button>
-                            )}
-                        </a>
-                      )}
-                      {project.githubLink && (
-                        <a
-                          href={project.githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="no-underline text-customGreen"
-                        >
-                          {hoveredProject &&
-                            hoveredProject.title === project.title && (
-                              <button className="cursor-pointer text-customGreen lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
-                                GitHub
-                              </button>
-                            )}
-                        </a>
-                      )}</div>
+                        {project.siteLink && (
+                          <a
+                            href={project.siteLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline hover:text-customGreen"
+                          >
+                            {hoveredProject &&
+                              hoveredProject.title === project.title &&
+                              hoveredProject.siteLink !== null && (
+                                <button className="cursor-pointer text-customGreen lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
+                                  Site
+                                </button>
+                              )}
+                          </a>
+                        )}
+                        {project.githubLink && (
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline text-customGreen"
+                          >
+                            {hoveredProject &&
+                              hoveredProject.title === project.title && (
+                                <button className="cursor-pointer text-customSkyBlue lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
+                                  GitHub
+                                </button>
+                              )}
+                          </a>
+                        )}
+                      </div>
                       {!(
                         hoveredProject &&
                         hoveredProject.title === project.title &&
