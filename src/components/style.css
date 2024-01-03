@@ -6,7 +6,7 @@
   color: white;
 }
 
-.testecran {
+.customBackground {
   background: url(/images/background.jpg);
   background-size: cover;
 }
@@ -20,7 +20,7 @@
 /* MES REALISATIONS */
 
 .degrade-span {
-  background: linear-gradient(90deg, #00b700, #00bfff); /* Vert à Bleu */
+  background: linear-gradient(90deg, #00b700, #00bfff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

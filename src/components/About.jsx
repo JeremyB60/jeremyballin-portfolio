@@ -17,7 +17,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="testecran">
+    <div className="customBackground">
       <section className="max-w-screen-2xl h-screen flex items-center px-3 mx-auto">
         <div className="w-5/6 mx-auto flex">
           <div className="w-full lg:w-2/3 flex flex-col">
