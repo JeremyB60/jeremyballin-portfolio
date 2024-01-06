@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         customPlum: "#3d3145",
-        customGreen: "#00b700",
+        customGreen: "#6DE05D",
         customBlue: "#C6D4E4",
         customSkyBlue: "#00bfff",
       },
