@@ -11,7 +11,7 @@ const Projects = () => {
           l'EuraTechnologies de Lille. Le développement s'est déroulé dans un
           contexte professionnel en utilisant la méthodologie agile SCRUM, avec
           des rituels tels que les daily meetings et les sprint reviews ainsi
-          que la plateforme 'Jira' pour la gestion de projet.
+          que la plateforme Jira pour la gestion de projet.
           <br />
           <br />
           <strong>Front-end (ReactJS) :</strong>
@@ -47,11 +47,11 @@ const Projects = () => {
           Mini-projet personnel réalisé avec ReactJs pour explorer le framework.
           <br />
           <br />
+          - Utilisation des hooks React useState, useEffect afin gérer les états
+          et effets des composants. <br />
           - Import des dépendances Bootstrap et jQuery pour faciliter le style
           et la manipulation du DOM.
           <br />
-          - Découverte des hooks React useState, useEffect afin gérer les états
-          et effets des composants. <br />
           - Ajout d'une bibliothèque de glisser-déposer "Drag N Drop" qui permet
           de déplacer les tâches. <br />- Mise en place d'une sauvegarde des
           données en localstorage.
@@ -137,12 +137,12 @@ const Projects = () => {
   //     githubLink: "https://github.com/JeremyB60/jeudebulles",
   //   },
   // ];
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState(projects[0]);
 
   return (
-    <div className="customBackground">
+    <div className="bg-[#1B1A2A]">
       <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
-        <div className="w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
+        <div className="w-11/12 md:w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
             {hoveredProject && (
               <div className="text-sm xl:text-lg flex flex-col">
@@ -151,8 +151,13 @@ const Projects = () => {
             )}
           </div>
           <div className="w-full mx-auto md:w-1/2">
-            <h2 className="lg:text-[3vw] text-[25px] m-0 uppercase flex justify-between">
-              projets
+            <h2 className="m-0 uppercase flex justify-between">
+              <a
+                href="#mes-projets"
+                className="lg:text-[3vw] text-[25px] custom-link text-white visited:text-white no-underline uppercase"
+              >
+                projets
+              </a>
               <span className="lg:text-[2.5vw] text-[20px] text-customGreen">
                 {projects.length}
               </span>
@@ -231,9 +236,18 @@ const Projects = () => {
                 </div>
               ))}
             </ul>
+            <div className="mt-20 hidden md:block">
+              <a
+                href="#mes-competences"
+                className="text-lg custom-link text-white visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
+              >
+                Voir mes compétences
+              </a>
+            </div>
           </div>
         </div>
       </section>
+      <hr className="max-w-screen-2xl mx-auto w-2/3 border-b-0 m-0 hidden sm:block" />
     </div>
   );
 };

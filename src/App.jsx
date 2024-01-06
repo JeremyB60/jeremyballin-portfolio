@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Menu from "./components/Menu";
 
 const theme = createTheme({
   palette: {
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <Menu />
         <About />
         <Projects />
         <Skills />

@@ -63,10 +63,14 @@ const Skills = () => {
   const [, setHoveredToolIndex] = useState(-1);
 
   return (
-    <div className="customBackground pb-20">
-        <section className="max-w-screen-2xl mx-auto px-3">
-          <div className="w-5/6 mx-auto">
-            <h2 className="mb-3 lg:text-[2.5vw] text-[25px] m-0 uppercase flex justify-between">
+    <>
+      <section className="mx-auto px-3 bg-[#1B1A2A]">
+        <div
+          id="mes-competences"
+          className="max-w-screen-2xl flex flex-col py-14 justify-center mx-auto"
+        >
+          <div className="w-11/12 md:w-5/6 mx-auto">
+            <h2 className="lg:text-[2.5vw] text-[25px] uppercase flex justify-between">
               Mes compétences
             </h2>
             <Grid container spacing={2} sx={{ justifyContent: "center" }}>
@@ -96,7 +100,9 @@ const Skills = () => {
                 </Grid>
               ))}
             </Grid>
-            <h2 className="mt-10 mb-3 lg:text-[2.5vw] text-[25px] m-0 uppercase flex justify-between">
+          </div>
+          <div className="w-11/12 md:w-5/6 mx-auto pt-14" id="mes-outils">
+            <h2 className="lg:text-[2.3vw] text-[22px] uppercase flex justify-between mt-0">
               Mes outils
             </h2>
             <Grid container spacing={2} sx={{ justifyContent: "center" }}>
@@ -126,9 +132,10 @@ const Skills = () => {
                 </Grid>
               ))}
             </Grid>
-          </div>
-        </section>
-    </div>
+          </div>{" "}
+        </div>
+      </section>
+    </>
   );
 };
 
