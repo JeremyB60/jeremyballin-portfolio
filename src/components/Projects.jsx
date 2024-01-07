@@ -1,26 +1,89 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+
+const ImageModal = ({ imageUrl, alt, onClose }) => {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+      <div className="max-w-screen-xl max-h-screen relative overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={alt}
+          className="w-full h-full object-contain"
+        />
+        <button
+          onClick={onClose}
+          className="absolute top-0 right-0 m-2 py-1.5 flex justify-center items-center rounded-full border-none bg-black text-white cursor-pointer"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clipPath="url(#clip0_3652_4834)">
+              <path
+                d="M18 6L6 18"
+                stroke="#fff"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M6 6L18 18"
+                stroke="#fff"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_3652_4834">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+};
+ImageModal.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 const Projects = () => {
+  const [modalImage, setModalImage] = useState(null);
+
   const projects = [
     {
       title: "AquaElixir",
       category: "ReactJS/Symfony",
+      images: [
+        "images/AquaElixir/1.png",
+        "images/AquaElixir/2.png",
+        "images/AquaElixir/3.png",
+        "images/AquaElixir/4.png",
+        "images/AquaElixir/5.png",
+        "images/AquaElixir/6.png",
+        "images/AquaElixir/7.png",
+        "images/AquaElixir/8.png",
+      ],
       description: (
         <>
-          AquaElixir est un projet de site e-commerce réalisé en équipe à
-          l'EuraTechnologies de Lille. Le développement s'est déroulé dans un
-          contexte professionnel en utilisant la méthodologie agile SCRUM, avec
-          des rituels tels que les daily meetings et les sprint reviews ainsi
-          que la plateforme Jira pour la gestion de projet.
+          AquaElixir est un projet fictif de site e-commerce.
           <br />
           <br />
-          <strong>Front-end (ReactJS) :</strong>
-          - Utilisation de react-router-dom, axios, redux-store pour la gestion
-          de l'état notamment du panier.
+          <strong>Front-end (React + Vite) :</strong>
+          - Utilisation de react-router-dom, redux, toastify, axios...
           <br />
-          - Utilisation de Tailwind pour le CSS.
+          - Tailwind pour le CSS. Formik pour les formulaires.
           <br />
-          - Intégration de Stripe pour le traitement des paiements en ligne.
+          - Stripe pour le traitement des paiements en ligne.
+          <br />
+          - Pages dynamiques pour les catégories et produits.
           <br />
           <br />
           <strong>Back-end (Symfony) :</strong>
@@ -33,7 +96,8 @@ const Projects = () => {
           <br />
           - Intégration de Stripe pour la gestion des paiements.
           <br />
-          La base de données a été mise en place en utilisant MySQL.
+          <br />
+          Base de données MySQL.
         </>
       ),
       siteLink: "",
@@ -78,7 +142,7 @@ const Projects = () => {
           <br />
           <br />
           Une attention particulière a été portée à la responsivité du site,
-          assurant une expérience utilisateur optimale.
+          assurant une expérience utilisateur optimale ainsi qu'au SEO.
           <br />
           <br />
           Réalisation de l'hébergement et de la mise en ligne du site.
@@ -101,14 +165,12 @@ const Projects = () => {
           SQL, intègre les bibliothèques Bootstrap, jQuery et dropzone.js
           permettant ainsi une fonctionnalité de glisser-déposer côté
           administrateur.
-          <br /> Ajoute d'un système de connexion sécurisé.
           <br />
           <br />
           L'administrateur peut se connecter en toute sécurité et partager
           aisément ses fichiers PDF par un simple glisser-déposer.
-          <br /> Les utilisateurs ont la possibilité de consulter directement
-          les PDF dans leur navigateur ou de télécharger les fichiers PDF de
-          leur choix.
+          <br /> Les élèves ont la possibilité de consulter directement
+          les PDF dans leur navigateur ou de les télécharger.
           <br />
           <br />
           Réalisation de l'hébergement et de la mise en ligne du site.
@@ -118,36 +180,40 @@ const Projects = () => {
       githubLink: "https://github.com/JeremyB60/stockpdf",
     },
   ];
-  // const experiences = [
-  //   {
-  //     title: "Exercices",
-  //     image: "images/capture3.png",
-  //     category: "JavaScript",
-  //     description:
-  //       "Réalisé en formation DevWeb. Calculatrice, facture & devises.",
-  //     siteLink: "https://jeremyb60.github.io/Evaluation-JavaScript/",
-  //     githubLink: "https://github.com/JeremyB60/Evaluation-JavaScript",
-  //   },
-  //   {
-  //     title: "Jeu d'éclate bulles",
-  //     image: "images/capture4.png",
-  //     category: "JavaScript",
-  //     description: "Mini-jeu d'éclate bulles. Fonctions JS.",
-  //     siteLink: "https://jeremyb60.github.io/jeudebulles/",
-  //     githubLink: "https://github.com/JeremyB60/jeudebulles",
-  //   },
-  // ];
-  const [hoveredProject, setHoveredProject] = useState(projects[0]);
+
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
   return (
     <div className="bg-[#1B1A2A]">
       <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
         <div className="w-11/12 md:w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
-            {hoveredProject && (
+            {selectedProject && (
               <div className="text-sm xl:text-lg flex flex-col">
-                {hoveredProject.description}
+                {selectedProject.images && (
+                  <div className="flex flex-wrap gap-3 mb-5">
+                    {selectedProject.images.map((image, imageIndex) => (
+                      <img
+                        key={imageIndex}
+                        src={image}
+                        alt={`Projet ${selectedProject.title} - Image ${
+                          imageIndex + 1
+                        }`}
+                        className="max-w-full rounded w-1/5 cursor-pointer"
+                        onClick={() => setModalImage(image)}
+                      />
+                    ))}
+                  </div>
+                )}
+                {selectedProject.description}
               </div>
+            )}
+            {modalImage && (
+              <ImageModal
+                imageUrl={modalImage}
+                alt={`Projet ${selectedProject.title} - Image`}
+                onClose={() => setModalImage(null)}
+              />
             )}
           </div>
           <div className="w-full mx-auto md:w-1/2">
@@ -167,12 +233,13 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <div key={index}>
                   <li
-                    className="hover:text-customGreen flex"
-                    onMouseEnter={() => setHoveredProject(project)}
-                    onMouseLeave={() => setHoveredProject(null)}
+                    className="hover:text-customGreen flex cursor-pointer"
+                    onClick={() => setSelectedProject(project)}
+                    // onMouseEnter={() => setSelectedProject(project)}
+                    // onMouseLeave={() => setSelectedProject(null)}
                   >
-                    {hoveredProject &&
-                      hoveredProject.title === project.title && (
+                    {selectedProject &&
+                      selectedProject.title === project.title && (
                         <div className="flex items-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -196,9 +263,9 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             className="no-underline hover:text-customGreen"
                           >
-                            {hoveredProject &&
-                              hoveredProject.title === project.title &&
-                              hoveredProject.siteLink !== null && (
+                            {selectedProject &&
+                              selectedProject.title === project.title &&
+                              selectedProject.siteLink !== null && (
                                 <button className="cursor-pointer text-customGreen lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
                                   Site
                                 </button>
@@ -212,8 +279,8 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             className="no-underline text-customGreen"
                           >
-                            {hoveredProject &&
-                              hoveredProject.title === project.title && (
+                            {selectedProject &&
+                              selectedProject.title === project.title && (
                                 <button className="cursor-pointer text-customSkyBlue lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
                                   GitHub
                                 </button>
@@ -222,9 +289,9 @@ const Projects = () => {
                         )}
                       </div>
                       {!(
-                        hoveredProject &&
-                        hoveredProject.title === project.title &&
-                        hoveredProject.siteLink !== ""
+                        selectedProject &&
+                        selectedProject.title === project.title &&
+                        selectedProject.siteLink !== ""
                       ) && (
                         <span className="text-customBlue">
                           {project.category}

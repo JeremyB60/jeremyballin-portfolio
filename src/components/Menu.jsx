@@ -30,7 +30,7 @@ const Menu = () => {
       <div className="containerBurger">
         <div className="fixed">
           <div
-            className={`burger-menu ${menuOpen ? "cross" : ""}`}
+            className={`burger-menu px-1 pb-[2px] rounded ${menuOpen ? "cross" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <div className="bar"></div>

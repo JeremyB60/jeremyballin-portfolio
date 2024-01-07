@@ -40,6 +40,7 @@
   width: 30px;
   height: 3px;
   background-color: #fff;
+  border-radius: 5px;
 }
 
 .burger-menu .bar:nth-child(1),
