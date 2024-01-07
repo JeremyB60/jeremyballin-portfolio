@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ImageModal = ({ imageUrl, alt, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="max-w-screen-xl max-h-screen relative overflow-hidden">
+      <div className="max-w-screen-xl w-11/12 max-h-screen relative overflow-hidden">
         <img
           src={imageUrl}
           alt={alt}
