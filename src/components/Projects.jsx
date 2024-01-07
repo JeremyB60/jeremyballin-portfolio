@@ -57,19 +57,27 @@ ImageModal.propTypes = {
 const Projects = () => {
   const [modalImage, setModalImage] = useState(null);
 
+  // Fonction pour extraire le nom du fichier à partir de l'URL de l'image
+  function getImageFileName(imageUrl) {
+    const urlParts = imageUrl.split("/");
+    const fileNameWithExtension = urlParts[urlParts.length - 1];
+
+    return fileNameWithExtension.split(".")[0];
+  }
+
   const projects = [
     {
       title: "AquaElixir",
       category: "ReactJS/Symfony",
       images: [
-        "images/AquaElixir/1.png",
-        "images/AquaElixir/2.png",
-        "images/AquaElixir/3.png",
-        "images/AquaElixir/4.png",
-        "images/AquaElixir/5.png",
-        "images/AquaElixir/6.png",
-        "images/AquaElixir/7.png",
-        "images/AquaElixir/8.png",
+        "images/aquaelixir/accueil.png",
+        "images/aquaelixir/connexion.png",
+        "images/aquaelixir/categorie.png",
+        "images/aquaelixir/produit.png",
+        "images/aquaelixir/avis.png",
+        "images/aquaelixir/panier.png",
+        "images/aquaelixir/paiement.png",
+        "images/aquaelixir/administrateur.png",
       ],
       description: (
         <>
@@ -169,8 +177,8 @@ const Projects = () => {
           <br />
           L'administrateur peut se connecter en toute sécurité et partager
           aisément ses fichiers PDF par un simple glisser-déposer.
-          <br /> Les élèves ont la possibilité de consulter directement
-          les PDF dans leur navigateur ou de les télécharger.
+          <br /> Les élèves ont la possibilité de consulter directement les PDF
+          dans leur navigateur ou de les télécharger.
           <br />
           <br />
           Réalisation de l'hébergement et de la mise en ligne du site.
@@ -196,9 +204,9 @@ const Projects = () => {
                       <img
                         key={imageIndex}
                         src={image}
-                        alt={`Projet ${selectedProject.title} - Image ${
-                          imageIndex + 1
-                        }`}
+                        alt={`Projet ${
+                          selectedProject.title
+                        } - ${getImageFileName(image)}`}
                         className="max-w-full rounded w-1/5 cursor-pointer"
                         onClick={() => setModalImage(image)}
                       />

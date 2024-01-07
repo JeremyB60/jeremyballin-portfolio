@@ -18,7 +18,7 @@ const Menu = () => {
       behavior: "smooth",
       top: section.offsetTop,
     });
-    setMenuOpen(false); // Fermer le menu après le clic sur une section
+    setMenuOpen(false);
   };
 
   return (

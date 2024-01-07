@@ -32,14 +32,6 @@ const About = () => {
               Passionné de football, d'e-sport et des nouvelles technologies
               dont je suis toujours curieux d'approfondir mes connaissances.
             </p>
-            {/* <div className="mt-2">
-              <a
-                href="mailto:jeremy.ballin@orange.fr"
-                className="text-lg custom-link text-white visited:text-white no-underline active:text-customGreen font-bold hover:text-customGreen"
-              >
-                jeremy.ballin@orange.fr
-              </a>
-            </div> */}
             <div className="mt-2 md:mt-10">
               <a
                 href="#mes-projets"

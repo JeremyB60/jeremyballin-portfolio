@@ -1,6 +1,4 @@
-/* Menu.css */
 .sousMenu {
-  /* background: url(/images/background.jpg); */
   left: -100vw;
   visibility: hidden;
   transition: all 0.4s ease;

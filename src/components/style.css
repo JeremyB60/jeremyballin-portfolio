@@ -6,6 +6,8 @@
   color: white;
 }
 
+/* A PROPOS */
+
 .customBackground {
   background: url(/images/background.jpg);
   background-size: cover;
@@ -17,10 +19,8 @@
   background-position: center;
 }
 
-/* MES REALISATIONS */
-
 .degrade-span {
-  background: linear-gradient(90deg, #6DE05D, #00bfff);
+  background: linear-gradient(90deg, #6de05d, #00bfff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -51,6 +51,5 @@
 }
 
 .skill-card:hover {
-  /* transform: scale(1.1); */
   background-color: #030a03;
 }
