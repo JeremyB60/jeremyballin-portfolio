@@ -10,7 +10,7 @@ const theme = createTheme({
       main: "#3D3145",
     },
     secondary: {
-      main: "#6DE05D",
+      main: "#65F54C",
     },
     tertiary: {
       main: "#C6D4E4",

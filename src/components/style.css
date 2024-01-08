@@ -20,7 +20,7 @@
 }
 
 .degrade-span {
-  background: linear-gradient(90deg, #6de05d, #00bfff);
+  background: linear-gradient(90deg, #65f54c, #4cacf5);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -51,5 +51,5 @@
 }
 
 .skill-card:hover {
-  background-color: #030a03;
+  background-color: #71718F;
 }

@@ -64,7 +64,7 @@ const Skills = () => {
 
   return (
     <>
-      <section className="mx-auto px-3 bg-[#1B1A2A]">
+      <section className="mx-auto px-3 bg-customDarkBlue">
         <div
           id="mes-competences"
           className="max-w-screen-2xl flex flex-col py-14 justify-center mx-auto"

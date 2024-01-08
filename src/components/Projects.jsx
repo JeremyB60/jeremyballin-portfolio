@@ -192,7 +192,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
   return (
-    <div className="bg-[#1B1A2A]">
+    <div className="bg-customDarkBlue">
       <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
         <div className="w-11/12 md:w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
@@ -243,8 +243,6 @@ const Projects = () => {
                   <li
                     className="hover:text-customGreen flex cursor-pointer"
                     onClick={() => setSelectedProject(project)}
-                    // onMouseEnter={() => setSelectedProject(project)}
-                    // onMouseLeave={() => setSelectedProject(null)}
                   >
                     {selectedProject &&
                       selectedProject.title === project.title && (
@@ -255,7 +253,7 @@ const Projects = () => {
                             viewBox="0 -960 960 960"
                             width="24"
                             className="mr-2"
-                            fill="#6de05d"
+                            fill="#65F54C"
                           >
                             <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
                           </svg>
@@ -301,7 +299,7 @@ const Projects = () => {
                         selectedProject.title === project.title &&
                         selectedProject.siteLink !== ""
                       ) && (
-                        <span className="text-customBlue">
+                        <span className="text-customLightBlue">
                           {project.category}
                         </span>
                       )}
