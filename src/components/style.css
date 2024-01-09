@@ -1,5 +1,10 @@
 @tailwind utilities;
 
+@font-face {
+  font-family: Raleway;
+  src: url(./Raleway-VariableFont_wght.ttf);
+}
+
 * {
   scroll-behavior: smooth;
   font-family: "Raleway", sans-serif;
