@@ -26,7 +26,7 @@ const About = () => {
             </h2>
             <span className="lg:text-[3vw] text-[25px] font-bold">
               Développeur <span className="degrade-span">Fullstack</span> <br />{" "}
-              spécialisé ReactJs et Symfony
+              orienté ReactJs et Symfony
             </span>
             <p className="md:text-xl">
               Passionné de football, d'e-sport et des nouvelles technologies
