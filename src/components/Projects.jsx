@@ -193,7 +193,7 @@ const Projects = () => {
 
   return (
     <div className="bg-customDarkBlue">
-      <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
+      <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto pt-16 sm-pt-0">
         <div className="w-11/12 md:w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
             {selectedProject && (
@@ -228,16 +228,16 @@ const Projects = () => {
             <h2 className="m-0 uppercase flex justify-between">
               <a
                 href="#mes-projets"
-                className="lg:text-[3vw] text-[25px] custom-link text-white visited:text-white no-underline uppercase"
+                className="lg:text-[2.5vw] text-[25px] custom-link text-white visited:text-white no-underline uppercase"
               >
                 projets
               </a>
-              <span className="lg:text-[2.5vw] text-[20px] text-customGreen">
+              <span className="lg:text-[2vw] text-[20px] text-customGreen">
                 {projects.length}
               </span>
             </h2>
             <hr />
-            <ul className="list-none pl-0 lg:text-[1.7vw] text-[18px] my-3">
+            <ul className="list-none pl-0 my-3">
               {projects.map((project, index) => (
                 <div key={index}>
                   <li
@@ -260,8 +260,8 @@ const Projects = () => {
                         </div>
                       )}
                     <div className="flex w-full justify-between items-center">
-                      <span className="my-1">{project.title}</span>
-                      <div className="flex gap-5">
+                      <span className="lg:text-[1.5vw] text-[18px] my-1">{project.title}</span>
+                      <div className="flex gap-2">
                         {project.siteLink && (
                           <a
                             href={project.siteLink}
@@ -272,7 +272,7 @@ const Projects = () => {
                             {selectedProject &&
                               selectedProject.title === project.title &&
                               selectedProject.siteLink !== null && (
-                                <button className="cursor-pointer text-customGreen lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
+                                <button className="cursor-pointer text-customGreen xl:text-[1.2vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
                                   Site
                                 </button>
                               )}
@@ -287,7 +287,7 @@ const Projects = () => {
                           >
                             {selectedProject &&
                               selectedProject.title === project.title && (
-                                <button className="cursor-pointer text-customSkyBlue lg:text-[1.5vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
+                                <button className="cursor-pointer text-customSkyBlue xl:text-[1.2vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
                                   GitHub
                                 </button>
                               )}
@@ -299,7 +299,7 @@ const Projects = () => {
                         selectedProject.title === project.title &&
                         selectedProject.siteLink !== ""
                       ) && (
-                        <span className="text-customLightBlue">
+                        <span className="text-customLightBlue xl:text-[1.2vw] text-[15px]">
                           {project.category}
                         </span>
                       )}
@@ -309,7 +309,7 @@ const Projects = () => {
                 </div>
               ))}
             </ul>
-            <div className="mt-20 hidden md:block">
+            <div className="mt-16 hidden md:block">
               <a
                 href="#mes-competences"
                 className="text-lg custom-link text-white visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"

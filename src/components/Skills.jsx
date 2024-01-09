@@ -17,6 +17,8 @@ import {
   FaSymfony,
   FaFigma,
   FaStripeS,
+  FaNodeJs,
+  FaNpm,
 } from "react-icons/fa";
 import {
   SiOpenai,
@@ -24,6 +26,7 @@ import {
   SiTailwindcss,
   SiJirasoftware,
   SiPostman,
+  SiVite,
 } from "react-icons/si";
 import { BsTrello } from "react-icons/bs";
 import { BiLogoVisualStudio } from "react-icons/bi";
@@ -35,6 +38,7 @@ import "./style.css";
 const Skills = () => {
   const skillsData = [
     { icon: <DiReact size={48} />, name: "Reactjs" },
+    { icon: <SiVite size={48} />, name: "Vite" },
     { icon: <FaSymfony size={48} />, name: "Symfony" },
     { icon: <SiTailwindcss size={48} />, name: "Tailwind" },
     { icon: <FaStripeS size={48} />, name: "Stripe" },
@@ -47,6 +51,8 @@ const Skills = () => {
     { icon: <FaDatabase size={48} />, name: "SQL" },
     { icon: <DiMysql size={48} />, name: "MySQL" },
     { icon: <DiWordpress size={48} />, name: "WordPress" },
+    { icon: <FaNodeJs size={48} />, name: "NodeJs" },
+    { icon: <FaNpm size={48} />, name: "NPM" },
   ];
   const toolsData = [
     { icon: <BiLogoVisualStudio size={48} />, name: "VSCode" },
