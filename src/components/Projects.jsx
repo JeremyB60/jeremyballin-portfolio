@@ -193,7 +193,7 @@ const Projects = () => {
 
   return (
     <div className="bg-customDarkBlue">
-      <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto">
+      <section id="mes-projets" className="max-w-screen-2xl flex px-3 mx-auto pt-0">
         <div className="w-11/12 md:w-5/6 mx-auto flex flex-col-reverse justify-center gap-5 md:gap-10 items-center md:flex-row h-screen">
           <div className="w-full items-center flex md:w-1/2 min-h-[50vh] md:min-h-full">
             {selectedProject && (
