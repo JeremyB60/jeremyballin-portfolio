@@ -21,12 +21,10 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Menu />
-        <About />
-        <Projects />
-        <Skills />
-      </div>
+      <Menu />
+      <About />
+      <Projects />
+      <Skills />
     </ThemeProvider>
   );
 };

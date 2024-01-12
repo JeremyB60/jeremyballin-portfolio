@@ -1,6 +1,7 @@
 // Menu.js
 import { useState } from "react";
 import "./Menu.css";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const Menu = () => {
   const sections = [
@@ -30,13 +31,20 @@ const Menu = () => {
       <div className="containerBurger">
         <div className="fixed">
           <div
-            className={`burger-menu px-1 pb-[2px] rounded ${menuOpen ? "cross" : ""}`}
+            className={`burger-menu px-1 pb-[2px] rounded ${
+              menuOpen ? "cross" : ""
+            }`}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
+        </div>
+      </div>
+      <div className="containerScroll">
+        <div className="fixed">
+          <ScrollToTopButton />
         </div>
       </div>
       <nav className="fixed h-full w-full sousMenu flex justify-center items-center bg-[#1A1A29]">
