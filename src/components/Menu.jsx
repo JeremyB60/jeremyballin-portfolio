@@ -47,7 +47,7 @@ const Menu = () => {
           <ScrollToTopButton />
         </div>
       </div>
-      <nav className="fixed h-full w-full sousMenu flex justify-center items-center bg-[#1A1A29]">
+      <nav className="fixed h-full w-full sousMenu flex justify-center items-center bg-[#1A1A29] z-50">
         <ul className="m-0 p-0 space-y-10 uppercase">
           {sections.map((section) => (
             <li

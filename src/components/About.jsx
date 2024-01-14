@@ -28,7 +28,7 @@ const About = () => {
           }}
         >
           <img
-            src="images/down.webp"
+            src="portpoimages/down.webp"
             alt="Scroll down"
             className="h-10"
           />
