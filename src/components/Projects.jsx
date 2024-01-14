@@ -110,6 +110,8 @@ const Projects = () => {
       ),
       siteLink: "",
       githubLink: "",
+      githubFrontLink: "https://github.com/JeremyB60/AquaElixir_Front",
+      githubBackLink: "https://github.com/JeremyB60/AquaElixir_Back",
     },
     {
       title: "ToDoList",
@@ -260,7 +262,9 @@ const Projects = () => {
                         </div>
                       )}
                     <div className="flex w-full justify-between items-center">
-                      <span className="lg:text-[1.5vw] text-[18px] my-1">{project.title}</span>
+                      <span className="lg:text-[1.5vw] text-[18px] my-1 mr-2">
+                        {project.title}
+                      </span>
                       <div className="flex gap-2">
                         {project.siteLink && (
                           <a
@@ -293,11 +297,40 @@ const Projects = () => {
                               )}
                           </a>
                         )}
+                        {project.githubFrontLink && (
+                          <a
+                            href={project.githubFrontLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline text-customGreen"
+                          >
+                            {selectedProject &&
+                              selectedProject.title === project.title && (
+                                <button className="cursor-pointer text-customSkyBlue xl:text-[1.2vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
+                                  GitHub Front
+                                </button>
+                              )}
+                          </a>
+                        )}
+                        {project.githubBackLink && (
+                          <a
+                            href={project.githubBackLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline text-customGreen"
+                          >
+                            {selectedProject &&
+                              selectedProject.title === project.title && (
+                                <button className="cursor-pointer text-customSkyBlue xl:text-[1.2vw] text-[15px] hover:text-white bg-transparent hover:bg-customSkyBlue border border-customSkyBlue px-3 py-1 rounded">
+                                  GitHub Back
+                                </button>
+                              )}
+                          </a>
+                        )}
                       </div>
                       {!(
                         selectedProject &&
-                        selectedProject.title === project.title &&
-                        selectedProject.siteLink !== ""
+                        selectedProject.title === project.title
                       ) && (
                         <span className="text-customLightBlue xl:text-[1.2vw] text-[15px]">
                           {project.category}

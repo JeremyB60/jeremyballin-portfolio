@@ -18,6 +18,21 @@ const About = () => {
 
   return (
     <div id="a-propos" className="customBackground">
+        <a
+          href="#mes-projets"
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: "0%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <img
+            src="../../public/images/down.webp"
+            alt="Scroll down"
+            className="h-10"
+          />
+        </a>
       <section className="max-w-screen-2xl h-screen flex items-center px-3 mx-auto">
         <div className="w-11/12 md:w-5/6 mx-auto gap-5 md:gap-0 flex flex-col-reverse md:flex-row">
           <div className="w-full lg:w-2/3 flex flex-col">
