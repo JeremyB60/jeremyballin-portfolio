@@ -13,7 +13,7 @@ const theme = createTheme({
       main: "#65F54C",
     },
     tertiary: {
-      main: "#C6D4E4",
+      main: "#C6D4E4", 
     },
   },
 });

@@ -1,18 +1,18 @@
 .sousMenu {
-  left: -100vw;
+  right: -100vw;
   visibility: hidden;
   transition: all 0.4s ease;
 }
 
 .show-menu .sousMenu {
-  left: 0;
+  right: 0;
   visibility: visible;
 }
 
 .containerBurger {
   position: absolute;
   top: 30px;
-  left: 4%;
+  right: 7%;
   z-index: 1000;
 }
 

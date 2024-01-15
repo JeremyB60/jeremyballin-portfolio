@@ -131,7 +131,7 @@ const Projects = () => {
           données en localstorage.
         </>
       ),
-      siteLink: "https://jeremyb60.github.io/reactjs-todolist/",
+      demoLink: "https://jeremyb60.github.io/reactjs-todolist/",
       githubLink: "https://github.com/JeremyB60/reactjs-todolist",
     },
     {
@@ -266,19 +266,29 @@ const Projects = () => {
                         {project.title}
                       </span>
                       <div className="flex gap-2">
-                        {project.siteLink && (
+                        {(project.siteLink || project.demoLink) && (
                           <a
-                            href={project.siteLink}
+                            href={project.siteLink || project.demoLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="no-underline hover:text-customGreen"
                           >
                             {selectedProject &&
                               selectedProject.title === project.title &&
-                              selectedProject.siteLink !== null && (
-                                <button className="cursor-pointer text-customGreen xl:text-[1.2vw] text-[15px] hover:text-white bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
-                                  Site
-                                </button>
+                              (selectedProject.siteLink ||
+                                selectedProject.demoLink) !== null && (
+                                <>
+                                  {selectedProject.siteLink && (
+                                    <button className="cursor-pointer text-customGreen xl:text-[1.2vw] text-[15px] hover:text-customDarkBlue bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
+                                      Site
+                                    </button>
+                                  )}
+                                  {selectedProject.demoLink && (
+                                    <button className="cursor-pointer text-customGreen xl:text-[1.2vw] text-[15px] hover:text-customDarkBlue bg-transparent hover:bg-customGreen border border-customGreen px-3 py-1 rounded">
+                                      Demo
+                                    </button>
+                                  )}
+                                </>
                               )}
                           </a>
                         )}
@@ -345,7 +355,10 @@ const Projects = () => {
             <div className="mt-16 hidden md:block">
               <a
                 href="#mes-competences"
-                className="text-lg custom-link text-white visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
+                style={{
+                  color: "#65F54C",
+                }}
+                className="text-lg custom-link visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
               >
                 Voir mes compétences
               </a>

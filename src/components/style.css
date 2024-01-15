@@ -14,12 +14,12 @@
 /* A PROPOS */
 
 .customBackground {
-  background: url(/images/background.jpg);
+  background: url(../images/background.jpg);
   background-size: cover;
 }
 
 .aboutImage {
-  background: url(images/avatar.svg) no-repeat;
+  background: url(../images/avatar.svg) no-repeat;
   background-size: contain;
   background-position: center;
 }

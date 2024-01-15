@@ -25,7 +25,7 @@ const Menu = () => {
   return (
     <div
       className={`max-w-screen-2xl mx-auto relative ${
-        menuOpen ? "show-menu" : null
+        menuOpen ? "show-menu" : ""
       }`}
     >
       <div className="containerBurger">

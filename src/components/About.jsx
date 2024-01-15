@@ -18,21 +18,18 @@ const About = () => {
 
   return (
     <div id="a-propos" className="customBackground">
-        <a
-          href="#mes-projets"
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: "0%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <img
-            src="images/down.webp"
-            alt="Scroll down"
-            className="h-10"
-          />
-        </a>
+      <a
+        href="#mes-projets"
+        className="hidden md:block"
+        style={{
+          position: "absolute",
+          left: "50%",
+          bottom: "0%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <img src="images/down.webp" alt="Scroll down" className="h-10" />
+      </a>
       <section className="max-w-screen-2xl h-screen flex items-center px-3 mx-auto">
         <div className="w-11/12 md:w-5/6 mx-auto gap-5 md:gap-0 flex flex-col-reverse md:flex-row">
           <div className="w-full lg:w-2/3 flex flex-col">
@@ -50,7 +47,10 @@ const About = () => {
             <div className="mt-2 md:mt-10">
               <a
                 href="#mes-projets"
-                className="text-lg md:text-xl custom-link text-white visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
+                style={{
+                  color: "#65F54C"
+                }}
+                className="text-lg custom-link visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
               >
                 Voir mes projets
               </a>
