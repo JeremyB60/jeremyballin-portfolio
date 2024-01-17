@@ -2,6 +2,7 @@
   right: -100vw;
   visibility: hidden;
   transition: all 0.4s ease;
+  border-left: 1px solid #4cacf5;
 }
 
 .show-menu .sousMenu {
@@ -34,12 +35,15 @@
 .burger-menu .bar:nth-child(1),
 .burger-menu .bar:nth-child(3) {
   transform: rotate(0deg);
-  transition: transform 0.2s ease-in-out, top 0.2s 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, top 0.2s 0.2s ease-in-out,
+    background-color 0.8s ease-in-out;
 }
 .burger-menu.cross .bar:nth-child(1) {
   transform: rotate(-45deg);
   top: 15px;
-  transition: transform 0.2s 0.2s ease-in-out, top 0.2s ease-in-out;
+  transition: transform 0.2s 0.2s ease-in-out, top 0.2s ease-in-out,
+    background-color 0.8s ease-in-out;
+  background-color: #4cacf5;
 }
 
 .burger-menu.cross .bar:nth-child(2) {
@@ -50,7 +54,9 @@
 .burger-menu.cross .bar:nth-child(3) {
   transform: rotate(45deg);
   top: 15px;
-  transition: transform 0.2s 0.2s ease-in-out, top 0.2s ease-in-out;
+  transition: transform 0.2s 0.2s ease-in-out, top 0.2s ease-in-out,
+    background-color 0.8s ease-in-out;
+  background-color: #4cacf5;
 }
 
 .burger-menu .bar:nth-child(1) {

@@ -191,7 +191,7 @@ const Projects = () => {
     },
   ];
 
-  const [selectedProject, setSelectedProject] = useState(projects[0]);
+  const [selectedProject, setSelectedProject] = useState(projects[2]);
 
   return (
     <div className="bg-customDarkBlue">
@@ -239,7 +239,7 @@ const Projects = () => {
               </span>
             </h2>
             <hr />
-            <ul className="list-none pl-0 my-3">
+            <ul className="list-none pl-0 my-2">
               {projects.map((project, index) => (
                 <div key={index}>
                   <li
@@ -356,7 +356,7 @@ const Projects = () => {
               <a
                 href="#mes-competences"
                 style={{
-                  color: "#65F54C",
+                  color: "#4cacf5",
                 }}
                 className="text-lg custom-link visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
               >
@@ -366,7 +366,10 @@ const Projects = () => {
           </div>
         </div>
       </section>
-      <hr className="max-w-screen-2xl mx-auto w-2/3 border-b-0 m-0 hidden sm:block" />
+      <hr
+        className="max-w-screen-2xl mx-auto w-2/3 border-b-0 m-0 hidden sm:block"
+        style={{ borderTop: "1px inset #65f54c" }}
+      />
     </div>
   );
 };

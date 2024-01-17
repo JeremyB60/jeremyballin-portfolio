@@ -56,5 +56,6 @@
 }
 
 .skill-card:hover {
-  background-color: #71718F;
+  background-color: #71718f;
+  transition: background-color 0.2s ease;
 }

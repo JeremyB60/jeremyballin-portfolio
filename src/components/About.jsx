@@ -48,7 +48,7 @@ const About = () => {
               <a
                 href="#mes-projets"
                 style={{
-                  color: "#65F54C"
+                  color: "#4cacf5",
                 }}
                 className="text-lg custom-link visited:text-white no-underline uppercase active:text-customGreen font-bold hover:text-customGreen"
               >
@@ -59,7 +59,10 @@ const About = () => {
           <div className="w-full md:w-1/3 h-[40vh] mb-3 md:mb-0 md:h-auto flex-shrink-0 aboutImage"></div>
         </div>
       </section>
-      <hr className="max-w-screen-2xl mx-auto w-2/3 border-b-0 m-0 hidden sm:block" />
+      <hr
+        className="max-w-screen-2xl mx-auto w-2/3 border-b-0 m-0 hidden sm:block"
+        style={{ borderTop: "1px inset #65f54c" }}
+      />
     </div>
   );
 };
